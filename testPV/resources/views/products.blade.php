@@ -16,7 +16,7 @@
         <div class="bor8 dis-flex p-l-15">
             <form action="{{ Route('product') }}" method="get">
                 @csrf
-                <input class="mtext-107 cl2 size-114 plh2 p-r-15"  type="search"
+                <input class="mtext-107 cl2 size-114 plh2 p-r-15" value="{{ $name }}"  type="search"
                     name="name" placeholder="Search">
             </form>
 
