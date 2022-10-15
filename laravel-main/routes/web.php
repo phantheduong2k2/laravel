@@ -25,7 +25,7 @@ Route::get('/', function () {
 Route::get('room',[RoomController::class, 'index'])->name('room');
 
 
-Route::prefix('users')->middleware('auth')->name('users.')->group(function(){
+Route::prefix('users')->name('users.')->group(function(){
     Route::get('/',[UsersController::class,'index'])->name('list');
 
    Route::delete('/delete/{user}',[UsersController::class,'delete'])->name('delete');
@@ -37,7 +37,7 @@ Route::prefix('users')->middleware('auth')->name('users.')->group(function(){
    Route::post('update/{id}', [UsersController::class, 'update'])->name('update');
 });
 
-Route::middleware('guest')->prefix('auth')->name('auth.')->group(function(){
+Route::prefix('auth')->name('auth.')->group(function(){
     Route::get('/login',[AuthController::class,'getLogin'])->name('getLogin');
     Route::post('/login',[AuthController::class,'postLogin'])->name('postLogin');
 });
