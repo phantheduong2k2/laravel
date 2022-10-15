@@ -23,9 +23,10 @@ class ProductsController extends Controller
         } else {
             $products = products::select('*')->get();
         }
-          return view('products', [
-            'data' => $products
-          ]);
+        return view('products', [
+            'data' => $products,
+            'name' => $name
+        ]);
     }
 
     /**
